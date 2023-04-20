@@ -1,0 +1,171 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block title %}
+        <title>TASKTOK |
+            {% block subtitle %}
+                Home
+            {% endblock %}
+        </title>
+    {% endblock %}
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'core/tasktok-favicon.png' %}"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100i,200,300,400,700,800,900" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/bootstrap.min.css' %}">
+    <!-- owl-carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/owl-carousel/owl.carousel.css' %}"/>
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{% static 'website/css/magnific-popup/magnific-popup.css' %}"/>
+    <!-- Animate CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/animate.css' %}"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/font-awesome.min.css' %}"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/export.css' %}"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/line-awesome.min.css' %}"/>
+    <!-- media element player -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/mediaelementplayer.min.css' %}"/>
+    <!-- Timeline CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/timeline.min.css' %}">
+    <!-- style CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/custom.css' %}">
+
+    {% block css %}
+
+    {% endblock %}
+</head>
+
+<body data-spy="scroll" data-offset="80">
+<!-- loading -->
+<div id="loading">
+    <div id="loading-center">
+        <div class='loader loader2'>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- loading End -->
+
+{% block header %}
+    {% include 'website/include/header.html' %}
+{% endblock %}
+
+{% block no-main %}
+    <!-- banner -->
+    <div id="wave" class="iq-banner">
+        <div class="banner-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 align-self-center">
+                        <div class="banner-text text-left iq-font-white">
+                            <h1 class="iq-font-white iq-mb-20"><b class="iq-font-yellow">
+                                Crypto Sender </b>Send and receive digital currency.
+                            </h1>
+                            <p>Crypto Sender is a web application where you can send and request digital currencies
+                                . It gives you a good opportunity to save your money online.
+                                There are various Wallet Platform for but it is something Unique .</p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7 text-center r9-mt-40">
+                        <div class="iq-countdown">
+                            <h2 class="iq-tw-8 iq-font-yellow">Crypto Rates</h2>
+                            <ul id="countdown">
+                                <li class="border-white"><span class="days">{{ BTC }}</span>
+                                    <p class="days_text ">BTC</p>
+                                </li>
+                                <li class="border-white"><span class="days">{{ ETH }}</span>
+                                    <p class="days_text ">ETH</p>
+                                </li>
+                                <li class="border-white"><span class="days">{{ DOGE }}</span>
+                                    <p class="days_text ">DOGE</p>
+                                </li>
+                            </ul>
+                            <div class="iq-progress-bar-linear">
+                                <p class="iq-progress-bar-text text-left">We have traded volume
+                                    <span>$500000</span>
+                                </p>
+                                <div class="iq-progress-bar">
+                                    <span data-percent="90"></span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner -->
+    <!-- Main-Contain -->
+    <div class="main-contain">
+
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+{% endblock %}
+
+{% include 'website/include/footer.html' %}
+
+<!-- back-to-top -->
+<div id="back-to-top">
+    <a class="top" id="top" href="#top"><i class="fa fa-angle-double-up" aria-hidden="true"></i> </a>
+</div>
+<!-- back-to-top End -->
+<!-- bubbly -->
+<canvas id="canvas1"></canvas>
+<!-- bubbly End -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{% static 'website/js/jquery-min.js' %}"></script>
+<!-- popper JavaScript -->
+<script src="{% static 'website/js/popper.min.js' %}"></script>
+<!-- Bootstrap JavaScript -->
+<script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+<!-- All-plugins JavaScript -->
+<script src="{% static 'website/js/all-plugins.js' %}"></script>
+<!-- timeline JavaScript -->
+<script src="{% static 'website/js/timeline.min.js' %}"></script>
+<!-- wave JavaScript -->
+<script src="{% static 'website/js/wave/three.min.js' %}"></script>
+<script src="{% static 'website/js/wave/Projector.js' %}"></script>
+<script src="{% static 'website/js/wave/CanvasRenderer.js' %}"></script>
+<script src="{% static 'website/js/wave/index.js' %}"></script>
+<!-- bubbly JavaScript -->
+<script src="{% static 'website/js/bubbly-bg.js' %}"></script>
+<!-- Custom JavaScript -->
+<script src="{% static 'website/js/custom.js' %}"></script>
+
+{% block js %}
+
+{% endblock %}
+
+
+</body>
+</html>

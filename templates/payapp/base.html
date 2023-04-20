@@ -1,0 +1,61 @@
+{% load static %}
+{#{% load notifications_tags %}#}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moneify</title>
+
+    <link rel="shortcut icon" href="{% static 'website/img/fav.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugin/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugin/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/custom-family.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugin/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugin/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+</head>
+<body data-sidebar="dark" data-layout-mode="dark">
+
+  <!-- header-section end -->
+
+
+ {% block content %}
+ {% endblock content %}
+
+    <div class="rightbar-overlay"></div>
+
+ <script src="{% static 'website/js/jquery.min.js' %}"></script>
+    <script src="{% static 'website/js/proper-min.js' %}"></script>
+    <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'website/js/fontawesome.js' %}"></script>
+    <script src="{% static 'website/js/plugin/slick.js' %}"></script>
+    <script src="{% static 'website/js/plugin/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'website/js/plugin/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'website/js/plugin/wow.min.js' %}"></script>
+    <script src="{% static 'website/js/plugin/plugin.js' %}"></script>
+    <script src="{% static 'website/js/main.js' %}"></script>
+
+    {#    {% register_notify_callbacks callbacks='fill_notification_badge,my_special_notification_callback' %}#}
+
+
+    {# BASE INTERNAL SCRIPTS OR LINKS THAT ARE REQUIRED IN PAGE #}
+    {% block js %}
+
+    {% endblock %}
+    {# -------------------------------------------------------- #}
+
+
+</body>
+</html>
+
+
+{# BASE EXTERNAL SCRIPTS OR LINKS THAT ARE REQUIRED IN PAGE #}
+{% block js_code %}
+
+{% endblock %}
+{# -------------------------------------------------------- #}

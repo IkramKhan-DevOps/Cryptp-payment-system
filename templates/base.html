@@ -1,0 +1,77 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>
+        {% block base_title %}
+            Moneyfy | {% block base_subtitle %}{% endblock %}
+        {% endblock %}
+    </title>
+
+    {# GLOBAL CSS #}
+    <link rel="shortcut icon" href="{% static 'required/images/logo-staff-dark-100.png' %}">
+    <link href="{% static 'admin/css/tabler.min.css' %}?1668287865" rel="stylesheet"/>
+    <link href="{% static 'admin/css/tabler-flags.min.css' %}?1668287865" rel="stylesheet"/>
+    <link href="{% static 'admin/css/tabler-payments.min.css' %}?1668287865" rel="stylesheet"/>
+    <link href="{% static 'admin/css/tabler-vendors.min.css' %}?1668287865" rel="stylesheet"/>
+    <link href="{% static 'admin/css/demo.min.css' %}?1668287865" rel="stylesheet"/>
+    <link href="{% static 'core/css/icons.css' %}" rel="stylesheet"/>
+    <script src="{% static 'required/js/jquery-3.6.2.slim.min.js' %}"></script>
+
+    {# INTERNAL CSS #}
+    {% block base_css %}
+
+    {% endblock base_css %}
+
+</head>
+{% block base_no_body %}
+    <body class="theme-dark">
+    <script src="{% static 'admin/js/demo-theme.min.js' %}?1668287865"></script>
+
+    <div class="page">
+
+        {% block base_header %}
+            {% include 'include/header.html' %}
+        {% endblock %}
+
+        <div class="page-wrapper">
+
+            <div class="page-body">
+                {% include 'payapp/include/messages.html' %}
+
+                <div class="container-xl">
+                    <div class="row row-deck row-cards">
+
+                        {% block content %}
+
+                        {% endblock %}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    {# GLOBAL SCRIPTS #}
+
+    <!-- Tabler Core -->
+    <script src="{% static 'admin/js/tabler.min.js' %}?1668287865" defer></script>
+    <script src="{% static 'admin/js/demo.min.js' %}?1668287865" defer></script>
+    {# INTERNAL SCRIPTS #}
+    {% block base_internal_scripts %}
+
+    {% endblock base_internal_scripts %}
+    </body>
+{% endblock %}
+</html>
+
+{# EXTERNAL SCRIPTS #}
+{% block base_external_scripts %}
+
+{% endblock base_external_scripts %}

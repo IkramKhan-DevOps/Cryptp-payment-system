@@ -1,0 +1,640 @@
+{% extends 'payapp/base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <!-- start preloader -->
+    <div class="preloader" id="preloader" style="opacity: 0; display: none;"></div>
+    <!-- end preloader -->
+
+    <!-- Scroll To Top Start-->
+    <a href="javascript:void(0)" class="scrollToTop active"><i class="fas fa-angle-double-up"></i></a>
+    <!-- Scroll To Top End -->
+ <header class="header-section animated fadeInDown header-fixed">
+        <div class="overlay">
+            <div class="container">
+                <div class="row d-flex header-area">
+                    <nav class="navbar d-flex navbar-expand-lg navbar-dark">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="#" class="logo" alt="logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+
+                            <div class="right-area header-action d-flex align-items-center">
+                                <a href="{% url 'register:login' %}" class="cmn-btn login">Login</a>
+                                <a href="{% url 'register:signup' %}" class="cmn-btn">Sign up</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- banner-section start -->
+    <section class="banner-section">
+        <div class="banner-content d-flex align-items-center">
+            <div class="container">
+                <div class="illu-item">
+                    <img class="item-1" src="{% static 'website/img/ban-frame-1.png' %}" alt="image">
+                    <img class="item-2" src="{% static 'website/img/ban-frame-2.png' %}" alt="image">
+                    <img class="item-3" src="{% static 'website/img/ban-frame-3.png' %}" alt="image">
+                    <img class="item-4" src="{% static 'website/img/ban-frame-4.png' %}" alt="image">
+                </div>
+                <div class="row justify-content-start">
+                    <div class="col-lg-7 col-md-10">
+                        <div class="main-content">
+                            <div class="top-area justify-content-center">
+                                <h1>Instantly pay the world</h1>
+                                <p class="xxlr">A simple and highly secure money transfer around the world</p>
+
+                                <div class="bottom-banner d-flex align-items-center">
+                                    <div class="left">
+                                        <a class="icon mfp-iframe popupvideo" href="https://www.youtube.com/watch?v=MJ0zpsWQ_XM">
+                                            <img src="{% static 'website/img/video-icon.png' %}" alt="icon">
+                                        </a>
+                                    </div>
+                                    <div class="right d-grid">
+                                        <h5>245M+</h5>
+                                        <div class="review d-flex align-items-center">
+                                            <h6>4.0</h6>
+                                            <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                            <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                            <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                            <a href="javascript:void(0)"><i class="fas fa-star"></i></a>
+                                            <a href="javascript:void(0)"><i class="fas fa-star blank"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-illu">
+                    <img class="right-1 wow fadeInUp" src="{% static 'website/img/ban-right.png' %}" alt="image" style="visibility: visible; animation-name: fadeInUp;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner-section end -->
+
+    <!-- Features In start -->
+    <section class="features-section">
+        <div class="overlay pt-120 pb-120">
+            <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <div class="section-header">
+                            <h2 class="title">Why we’re trusted by millions worldwide</h2>
+                            <p>moneify is a fast and secure service that lets you transfer money
+                                online using a computer, smartphone, or our app.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row wrapper">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/features-icon-1.png' %}" alt="icon">
+                            </div>
+                            <h5>Affordable</h5>
+                            <p>Low fees on international money transfers – always</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/features-icon-2.png' %}" alt="icon">
+                            </div>
+                            <h5>Simple</h5>
+                            <p>Send money on mobile app or online anytime from anywhere</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/features-icon-3.png' %}" alt="icon">
+                            </div>
+                            <h5>Quick</h5>
+                            <p>Send money to your loved ones in minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/features-icon-4.png' %}" alt="icon">
+                            </div>
+                            <h5>Safe &amp; Secure</h5>
+                            <p>Our 4-star Trustpilot rating speaks for itself</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features In end -->
+
+    <!-- Customers In start -->
+    <section class="customers-section">
+        <div class="overlay pb-120 d-flex justify-content-center">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-12">
+                        <div class="customers-area">
+                            <div class="element po-1">
+                                <div class="image-area">
+                                    <p class="item-1">Awesome!</p>
+                                    <img class="item-1" src="{% static 'website/img/customers-1.png' %}" alt="image">
+                                </div>
+                            </div>
+                            <div class="element po-2">
+                                <div class="image-area">
+                                    <p class="item-2">Awesome!</p>
+                                    <img class="item-2" src="{% static 'website/img/customers-2.png' %}" alt="image">
+                                </div>
+                            </div>
+                            <div class="element po-3">
+                                <div class="image-area">
+                                    <p class="item-3">Awesome!</p>
+                                    <img class="item-3" src="{% static 'website/img/customers-3.png' %}" alt="image">
+                                </div>
+                            </div>
+                            <div class="element po-4">
+                                <div class="image-area">
+                                    <p class="item-4">Awesome!</p>
+                                    <img class="item-4" src="{% static 'website/img/customers-4.png' %}" alt="image">
+                                </div>
+                            </div>
+                            <div class="element po-5">
+                                <div class="image-area">
+                                    <p class="item-5">Awesome!</p>
+                                    <img class="item-5" src="{% static 'website/img/customers-5.png' %}" alt="image">
+                                </div>
+                            </div>
+                            <div class="element po-6">
+                                <div class="image-area">
+                                    <p class="item-6">Awesome!</p>
+                                    <img class="item-6" src="{% static 'website/img/customers-6.png' %}" alt="image">
+                                </div>
+                            </div>
+                            <div class="element po-7">
+                                <div class="image-area">
+                                    <p class="item-7">Awesome!</p>
+                                    <img class="item-7" src="{% static 'website/img/customers-7.png' %}" alt="image">
+                                </div>
+                            </div>
+                            <div class="circle">
+                                <img src="{% static 'website/img/customers-bg.png' %}" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-area">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-lg-7 col-sm-8">
+                            <div class="section-header">
+                                <h2 class="title">Over <span>245m+</span> User Trust Paylio</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10 d-flex justify-content-md-between justify-content-around">
+                            <div class="total-item text-center">
+                                <div class="testimonials-carousel slick-initialized slick-slider"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1730px;"><div class="slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1" style="width: 865px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 1000ms ease 0s;"><div><div class="main" style="width: 100%; display: inline-block;">
+                                        <div class="wrapper">
+                                            <div class="profile">
+                                                <img src="{% static 'website/img/testimonials-1.png' %}" alt="image">
+                                            </div>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-lg-6 col-md-8 col-sm-12">
+                                                    <div class="bottom-item">
+                                                        <img class="quote" src="{% static 'website/img/left-quote.png' %}" alt="icon">
+                                                        <div class="review">
+                                                            <a href="javascript:void(0)" tabindex="-1"><i class="fas fa-star"></i></a>
+                                                            <a href="javascript:void(0)" tabindex="-1"><i class="fas fa-star"></i></a>
+                                                            <a href="javascript:void(0)" tabindex="-1"><i class="fas fa-star"></i></a>
+                                                            <a href="javascript:void(0)" tabindex="-1"><i class="fas fa-star"></i></a>
+                                                            <a href="javascript:void(0)" tabindex="-1"><i class="fas fa-star"></i></a>
+                                                        </div>
+                                                        <p>The greatest and number 1 services for transfer money online. I can
+                                                            send money easily and trusted services.</p>
+                                                        <a href="javascript:void(0)" tabindex="-1">Ella Stewart</a>
+                                                        <div class="country">
+                                                            <img src="{% static 'website/img/flag.png' %}" alt="image">
+                                                            <span class="smr">United States</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div></div><div class="slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false" style="width: 865px; position: relative; left: -865px; top: 0px; z-index: 999; opacity: 1;"><div><div class="main" style="width: 100%; display: inline-block;">
+                                        <div class="wrapper">
+                                            <div class="profile">
+                                                <img src="{% static 'website/img/testimonials-1.png' %}" alt="image">
+                                            </div>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-lg-6 col-md-8 col-sm-12">
+                                                    <div class="bottom-item">
+                                                        <img class="quote" src="{% static 'website/img/left-quote.png' %}" alt="icon">
+                                                        <div class="review">
+                                                            <a href="javascript:void(0)" tabindex="0"><i class="fas fa-star"></i></a>
+                                                            <a href="javascript:void(0)" tabindex="0"><i class="fas fa-star"></i></a>
+                                                            <a href="javascript:void(0)" tabindex="0"><i class="fas fa-star"></i></a>
+                                                            <a href="javascript:void(0)" tabindex="0"><i class="fas fa-star"></i></a>
+                                                            <a href="javascript:void(0)" tabindex="0"><i class="fas fa-star"></i></a>
+                                                        </div>
+                                                        <p>The greatest and number 1 services for transfer money online. I can
+                                                            send money easily and trusted services.</p>
+                                                        <a href="javascript:void(0)" tabindex="0">Rose W. Norwood</a>
+                                                        <div class="country">
+                                                            <img src="{% static 'website/img/flag.png' %}" alt="image">
+                                                            <span class="smr">United States</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div></div></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Customers In end -->
+
+    <!-- Why choose us In start -->
+    <section class="why-choose-us">
+        <div class="overlay pt-120 cus-pad">
+            <div class="container">
+                <div class="main-content">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-9">
+                            <div class="section-header text-center">
+                                <h2 class="title">Secure money transfers you can trust</h2>
+                                <p>Send and receive money in minutes from people you know and trust</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-wrapper">
+                        <div class="row wrapper">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-item text-center">
+                                    <div class="icon">
+                                        <img src="{% static 'website/img/choose-us-icon-1.png' %}" alt="icon">
+                                    </div>
+                                    <h5>Global Network</h5>
+                                    <p>We send money to 90 countries and open to new countries regularly</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-item text-center">
+                                    <div class="icon">
+                                        <img src="{% static 'website/img/choose-us-icon-2.png' %}" alt="icon">
+                                    </div>
+                                    <h5>Fixed costs</h5>
+                                    <p>We display the exchange rate, transfer fees and the amount they will receive</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-item text-center">
+                                    <div class="icon">
+                                        <img src="{% static 'website/img/choose-us-icon-3.png' %}" alt="icon">
+                                    </div>
+                                    <h5>Multi trans.option</h5>
+                                    <p>Send your money however you want - via cards and bank accounts or other option</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-item text-center">
+                                    <div class="icon">
+                                        <img src="{% static 'website/img/choose-us-icon-4.png' %}" alt="icon">
+                                    </div>
+                                    <h5>Live exchange Rate</h5>
+                                    <p>Our exchange rates are live 24/7. You take more when it goes up</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-item text-center">
+                                    <div class="icon">
+                                        <img src="{% static 'website/img/choose-us-icon-5.png' %}" alt="icon">
+                                    </div>
+                                    <h5>Best rates</h5>
+                                    <p>Best exchange rates,Cheaper than the banks &amp; others competitive on the market.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-item text-center">
+                                    <div class="icon">
+                                        <img src="{% static 'website/img/choose-us-icon-6.png' %}" alt="icon">
+                                    </div>
+                                    <h5>Rate Alerts</h5>
+                                    <p>Need to know when a currency hits a specific rate? The Paylio Rate Alerts will let
+                                        you know</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-item text-center">
+                                    <div class="icon">
+                                        <img src="{% static 'website/img/choose-us-icon-7.png' %}" alt="icon">
+                                    </div>
+                                    <h5>Track My Transfer</h5>
+                                    <p>With paylio you can know all the important information about your transfer.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-item text-center">
+                                    <div class="icon">
+                                        <img src="{% static 'website/img/choose-us-icon-8.png' %}" alt="icon">
+                                    </div>
+                                    <h5>24/7 Support</h5>
+                                    <p>We send money to 90 countries and open to new countries regularly</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why choose us In end -->
+
+    <!-- Affiliate In start -->
+    <section class="affiliate-section">
+        <div class="overlay pt-120">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-lg-5 d-flex justify-content-center">
+                        <div class="left-area">
+                            <img src="{% static 'website/img/affiliate-bg.png' %}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-center">
+                        <div class="section">
+                            <h5>transfers for you and your friends!</h5>
+                            <h2 class="title">Earn zero-fee*</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Affiliate In end -->
+
+    <!-- Payment Solutions In start -->
+    <section class="payment-solutions">
+        <div class="overlay pt-120 pb-120">
+            <div class="container-fruid wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="section-header">
+                                <h2 class="title">All Your Payments In One Place</h2>
+                                <p>We make international money transfer fast, simple and secure. Whichever method you
+                                    choose,
+                                    it only takes a few steps to send money online with us</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-carousel slick-initialized slick-slider"><button type="button" class="slick-prev pull-left slick-arrow" style=""><i class="icon-a-left-double" aria-hidden="true"></i></button><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 4794px; transform: translate3d(-1410px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-5" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-2.png' %}" alt="icon">
+                            </div>
+                            <h5>Freelancers</h5>
+                            <p>Pay directly to a foreign freelancer or employee around the world.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-3.png' %}" alt="icon">
+                            </div>
+                            <h5>Bulk Payments</h5>
+                            <p>Pay multiple payments to your beneficiaries in one go.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-4.png' %}" alt="icon">
+                            </div>
+                            <h5>Bulk Payments</h5>
+                            <p>Pay multiple payments to your beneficiaries in one go.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-5.png' %}" alt="icon">
+                            </div>
+                            <h5>Online Shopping</h5>
+                            <p>Pay for shopping at online stores from your paylio wallet smoothly.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-3.png' %}" alt="icon">
+                            </div>
+                            <h5>Bulk Payments</h5>
+                            <p>Pay multiple payments to your beneficiaries in one go.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-1.png' %}" alt="icon">
+                            </div>
+                            <h5>Pay your Supplier</h5>
+                            <p>Pay your Business payments with great rates and no hidden fee.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-2.png' %}" alt="icon">
+                            </div>
+                            <h5>Freelancers</h5>
+                            <p>Pay directly to a foreign freelancer or employee around the world.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-3.png' %}" alt="icon">
+                            </div>
+                            <h5>Bulk Payments</h5>
+                            <p>Pay multiple payments to your beneficiaries in one go.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-4.png' %}" alt="icon">
+                            </div>
+                            <h5>Bulk Payments</h5>
+                            <p>Pay multiple payments to your beneficiaries in one go.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-active" data-slick-index="4" aria-hidden="false" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-5.png' %}" alt="icon">
+                            </div>
+                            <h5>Online Shopping</h5>
+                            <p>Pay for shopping at online stores from your paylio wallet smoothly.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-3.png' %}" alt="icon">
+                            </div>
+                            <h5>Bulk Payments</h5>
+                            <p>Pay multiple payments to your beneficiaries in one go.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-1.png' %}" alt="icon">
+                            </div>
+                            <h5>Pay your Supplier</h5>
+                            <p>Pay your Business payments with great rates and no hidden fee.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-2.png' %}" alt="icon">
+                            </div>
+                            <h5>Freelancers</h5>
+                            <p>Pay directly to a foreign freelancer or employee around the world.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-3.png' %}" alt="icon">
+                            </div>
+                            <h5>Bulk Payments</h5>
+                            <p>Pay multiple payments to your beneficiaries in one go.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-4.png' %}" alt="icon">
+                            </div>
+                            <h5>Bulk Payments</h5>
+                            <p>Pay multiple payments to your beneficiaries in one go.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-5.png' %}" alt="icon">
+                            </div>
+                            <h5>Online Shopping</h5>
+                            <p>Pay for shopping at online stores from your paylio wallet smoothly.</p>
+                        </div>
+                    </div></div></div><div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" tabindex="-1" style="width: 282px;"><div><div class="single text-center" style="width: 100%; display: inline-block;">
+                        <div class="single-item text-center">
+                            <div class="icon">
+                                <img src="{% static 'website/img/payment-icon-3.png' %}" alt="icon">
+                            </div>
+                            <h5>Bulk Payments</h5>
+                            <p>Pay multiple payments to your beneficiaries in one go.</p>
+                        </div>
+                    </div></div></div></div></div><button type="button" class="slick-next pull-right slick-arrow" style=""><i class="icon-b-right-double" aria-hidden="true"></i></button></div>
+            </div>
+        </div>
+    </section>
+    <!-- Payment Solutions In end -->
+
+    <!-- How it works In start -->
+    <section class="how-works">
+        <div class="overlay pt-120 pb-120">
+            <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-header text-center">
+                            <h2 class="title">How to get started with sending money</h2>
+                            <p>It's easier than you think. Follow 3 simple easy steps</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 col-md-5">
+                        <div class="left-area">
+                            <img src="{% static 'website/img/how-works-Illu.png' %}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 wrapper col-md-7">
+                        <div class="single-item d-flex align-items-center">
+                            <div class="icon">
+                                <span class="xlr">01</span>
+                                <div class="iconbg">
+                                    <img src="{% static 'website/img/how-works-icon-1.png' %}" alt="icon">
+                                </div>
+                            </div>
+                            <div class="right">
+                                <h5>Register &amp; lock-in your transfer</h5>
+                                <p>Enter your details, apply within minutes and get set up all in one go to create
+                                    transactions</p>
+                            </div>
+                        </div>
+                        <div class="single-item d-flex align-items-center">
+                            <div class="icon">
+                                <span class="xlr second">02</span>
+                                <div class="iconbg">
+                                    <img src="{% static 'website/img/how-works-icon-2.png' %}" alt="icon">
+                                </div>
+                            </div>
+                            <div class="right">
+                                <h5>Send us your funds</h5>
+                                <p>Select currency amount you want to send and enter your beneficiary details</p>
+                            </div>
+                        </div>
+                        <div class="single-item d-flex align-items-center">
+                            <div class="icon">
+                                <span class="xlr third">03</span>
+                                <div class="iconbg">
+                                    <img src="{% static 'website/img/how-works-icon-3.png' %}" alt="icon">
+                                </div>
+                            </div>
+                            <div class="right">
+                                <h5>We deliver to your recipient</h5>
+                                <p>Pay us by Credit/Debit card or Bank Transfer, and we do the rest. That's it!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- How it works In end -->
+
+
+    <!-- Call to action In start -->
+    <section class="call-action">
+        <div class="overlay">
+            <div class="container wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="main-content">
+                            <div class="main pt-120 pb-120">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="section-header text-center">
+                                            <h2 class="title">Start sending money with moneyfy today</h2>
+                                            <p>Send money over the world with the best and transparent
+                                                exchange rates without fees!.</p>
+                                            <a href="{% url 'register:signup' %}" class="cmn-btn">Get your free account</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call to action In end -->
+
+    <!-- Footer Area Start -->
+{% endblock content %}
