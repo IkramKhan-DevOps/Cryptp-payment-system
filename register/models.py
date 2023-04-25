@@ -14,6 +14,7 @@ class User(AbstractUser):
     total_amount = models.FloatField(default=10)
     sent_amount = models.FloatField(default=0)
     currency_type = models.CharField(max_length=20, choices=CURRENCY_TYPE, default='BTC')
+    is_connected = models.BooleanField(default=False)
 
     REQUIRED_FIELDS = ['username', ]
     USERNAME_FIELD = 'email'
@@ -26,4 +27,3 @@ class User(AbstractUser):
             return f"{self.first_name} {self.last_name}"
         else:
             return self.username
-

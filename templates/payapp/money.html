@@ -1,23 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-body border-bottom">
+            <div class="col-6">
+                <p class="mb-0 h4">
+                    <i class="bx bx-transfer"></i> Send Or Request
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
 <div class="row justify-content-centre text-center mt-4">
-    <div class="col-lg-4 col-sm-4" >
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{% static 'admin/img/send.jpg' %}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Send Money To Anyone across the world</h5>
-    <a href="{% url 'payapp:transaction-create' %}" class="btn btn-success btn-rounded">Send Money</a>
-  </div>
-</div>
-    </div>    <div class="col-lg-6 col-sm-6" >
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{% static 'admin/img/receive.jpg' %}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Request Money To Anyone across the world</h5>
-    <a href="{% url 'payapp:request-create' %}" class="btn btn-success">Request Money</a>
-  </div>
-</div>
+    <div class="col-lg-4 col-sm-4">
+        <div class="card" style="width: 18rem;">
+            <img alt="Card image cap" class="card-img-top" src="{% static 'admin/img/send.jpg' %}">
+            <div class="card-body">
+                <h5 class="card-title">Send Money To Anyone across the world</h5>
+                <a class="btn btn-success btn-rounded" href="{% url 'payapp:transaction-create' %}">Send Money</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-6">
+        <div class="card" style="width: 18rem;">
+            <img alt="Card image cap" class="card-img-top" src="{% static 'admin/img/receive.jpg' %}">
+            <div class="card-body">
+                <h5 class="card-title">Request Money To Anyone across the world</h5>
+                <a class="btn btn-success" href="{% url 'payapp:request-create' %}">Request Money</a>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}

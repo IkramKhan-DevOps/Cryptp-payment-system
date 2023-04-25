@@ -1,5 +1,4 @@
 import datetime
-
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -7,7 +6,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.decorators import method_decorator
 from django.views import View
 from rest_framework.response import Response
-
+from .bll import total_request_amount,total_send_amount
 from django.views.generic import ListView, DetailView, TemplateView
 
 from payapp.models import Transaction, TransactionRequest
@@ -30,8 +29,14 @@ class DashboardTemplateView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(DashboardTemplateView, self).get_context_data(**kwargs)
+        t_trans = Transaction.objects.filter(sender=self.request.user)
         transactions = Transaction.objects.filter(Q(sender=self.request.user) | Q(receiver=self.request.user))
         requests = TransactionRequest.objects.filter(Q(sender=self.request.user) | Q(receiver=self.request.user))
+        t_requests = TransactionRequest.objects.filter(receiver=self.request.user)
+        context['total_send_amount'] = total_send_amount(self)
+        context['total_request_amount'] = total_request_amount(self)
+        context['t_trans'] = t_trans.count()
+        context['t_requests'] = t_requests.count()
         context['recent_transactions'] = transactions[0:10]
         context['recent_requests'] = requests[0:10]
         context['total_transactions'] = transactions.count()
@@ -281,8 +286,21 @@ class DepositView(View):
     def get(self, request, amount,*args):
         user =User.objects.get(id=request.user.id)
         print(user.total_amount)
-        user.total_amount += 100
+        user.total_amount += 10
         user.save()
 
         messages.success(request, "You have successfully deposited amoutn of " + str(amount))
         return redirect("payapp:dashboard")
+
+
+class EducationView(TemplateView):
+    template_name = 'payapp/education.html'
+
+
+class ConnectwithWallet(View):
+    def get(self,*args,**kwargs):
+        user = self.request.user
+        user.is_connected = True
+        user.save()
+        messages.success(self.request,"Successfully connected with wallet")
+        return redirect('payapp:dashboard')

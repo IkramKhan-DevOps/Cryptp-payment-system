@@ -24,7 +24,6 @@ INSTALLED_APPS = [
     # CUSTOM APPS
     'register.apps.RegisterConfig',
     'payapp.apps.PayappConfig',
-    'website'
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

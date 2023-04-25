@@ -3,7 +3,7 @@ from django.urls import path
 from .views import (
     HomeTemplateView, TransactionListView, TransactionCreateView,
     TransactionRequestListView, TransactionRequestCreateView, TransactionRequestUpdateView,
-    CurrencyConversionAPI, DashboardTemplateView, MoneyTemplateView, DepositView
+    CurrencyConversionAPI, DashboardTemplateView, MoneyTemplateView, DepositView,EducationView,ConnectwithWallet
 
 )
 
@@ -14,10 +14,12 @@ urlpatterns = [
     # WEBSITE HOME PAGE
     path('', HomeTemplateView.as_view(), name='home'),
     path('deposit/<str:amount>/', DepositView.as_view(), name='deposit'),
+    path('connect/', ConnectwithWallet.as_view(), name='wallet'),
 
     # USER DASHBOARD
     path('dashboard/', DashboardTemplateView.as_view(), name='dashboard'),
     path('money/', MoneyTemplateView.as_view(), name='money'),
+    path('education/', EducationView.as_view(), name='education'),
 
     # TRANSACTIONS SERVICES
     path('transaction/', TransactionListView.as_view(), name='transactions'),

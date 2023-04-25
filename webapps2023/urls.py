@@ -9,7 +9,6 @@ urlpatterns = [
 
 # your apps urls
 urlpatterns += [
-    path('', include('website.urls', namespace='website')),
     path('', include('register.urls', namespace='register')),
     path('', include('payapp.urls', namespace='payapp')),
 ]

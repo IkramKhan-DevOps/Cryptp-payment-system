@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51c82763-d407-41ea-b4b7-66e22996d6d9" name="Changes" comment="" />
+    <list default="true" id="51c82763-d407-41ea-b4b7-66e22996d6d9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.webapps" beforeDir="false" afterPath="$PROJECT_DIR$/db.webapps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/include/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/payapp/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/payapp/money.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/money.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/payapp/request_transaction_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/request_transaction_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/payapp/transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/transactions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps2023/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps2023/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps2023/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps2023/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/website/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/website/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/website/include/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/website/include/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/website/privacy-policy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/website/terms.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/views.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +43,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -28,6 +58,9 @@
       </map>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -36,19 +69,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/GIT/LEARN/Online-Payment-Servive-Thailand/static&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/media/saqib/Local Disk2/GIT/Cryptp-payment-system/templates/payapp",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/payapp" />
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="E:\GIT\LEARN\Online-Payment-Servive-Thailand\static" />
       <recent name="E:\GIT\LEARN\Online-Payment-Servive-Thailand" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
   <component name="RunManager">
@@ -91,5 +129,27 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/payapp/utils.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

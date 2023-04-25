@@ -2,74 +2,201 @@
 {% load static %}
 
 {% block subtitle %}
-    Dashboard
+Dashboard
 {% endblock %}
 
 {% block content %}
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0 me-3">
-                            <img alt="" class="avatar-md rounded-circle img-thumbnail"
-                                 src="{% static 'admin/images/base/no-user.png' %}">
-                        </div>
-                        <div class="flex-grow-1 align-self-center">
-                            <div class="text-muted">
-                                <p class="mb-2">Welcome to Dashboard</p>
-                                <h5 class="mb-1">{{ request.user.get_name_info }}</h5>
-                                <p class="mb-0">{{ request.user.email }}</p>
-                            </div>
-                        </div>
-                    </div>
+
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <!-- Page pre-title -->
+                <div class="page-pretitle">
+                    Overview
                 </div>
-
-                <div class="col-lg-8 align-self-center">
-                    <div class="text-lg-center mt-4 mt-lg-0">
-                        <div class="row">
-                            <div class="col">
-                                <div>
-                                    <p class="text-muted text-truncate mb-2">Amount</p>
-                                    <h5 class="mb-0">{{ request.user.total_amount }}</h5>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div>
-                                    <p class="text-muted text-truncate mb-2">Currency</p>
-                                    <h5 class="mb-0">{{ request.user.currency_type }}</h5>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div>
-                                    <p class="text-muted text-truncate mb-2">Send Amount</p>
-                                    <h5 class="mb-0">{{ request.user.sent_amount }}</h5>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div>
-                                    <p class="text-muted text-truncate mb-2">Transactions</p>
-                                    <h5 class="mb-0">{{ total_transactions }}</h5>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <h2 class="page-title">
+                    Dashboard
+                </h2>
             </div>
-            <!-- end row -->
+            <!-- Page title actions -->
+            <div class="col-auto ms-auto d-print-none">
+                <div class="btn-list">
+                                          {% if request.user.is_connected %}
+
+                  <span class="d-none d-sm-inline">
+                    <a class="btn" href="{% url 'payapp:deposit' 10 %}">
+                      Add Deposit
+                    </a>
+                  </span>
+                                          {% else %}
+
+            <a class="btn btn-outline-success" data-bs-target="#modal-success" data-bs-toggle="modal" href="#">
+    Connect with wallet
+</a>
+<div class="modal modal-blur fade" id="modal-success" tabindex="-1" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-status bg-success"></div>
+          <div class="modal-body text-center py-4">
+            <!-- Download SVG icon from http://tabler-icons.io/i/circle-check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-green icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M9 12l2 2l4 -4"></path></svg>
+            <h3>Connect With Wallet</h3>
+            <div class="text-muted">Are You sure you want to connect with wallet</div>
+          </div>
+          <div class="modal-footer">
+            <div class="w-100">
+              <div class="row">
+                <div class="col"><a href="#" class="btn w-100" data-bs-dismiss="modal">
+                    Go to dashboard
+                  </a></div>
+                <div class="col"><a href="{% url 'payapp:wallet' %}" class="btn btn-success w-100">
+                    Confirm
+                  </a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+                    {% endif %}
+                    <div class="col-12">
+                    <a aria-label="Create new report" class="btn btn-primary d-sm-none btn-icon" data-bs-target="#modal-report"
+                       data-bs-toggle="modal" href="#">
+                        <svg class="icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-11">
-        </div>
-        <div class="col-lg-1 mt-2">
-            <a href="{% url 'payapp:deposit' '10' %}" class="btn btn-success border-right btn-outline-success btn-sm">Deposit Amount</a>
-        </div>
+</div>
 
+    <div class="row row-cards">
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <span class="bg-primary text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
+                              <svg class="icon" fill="none" height="24" stroke="currentColor"
+                                   stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                   width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"
+                                                                                       stroke="none"></path><path
+                                      d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2"></path><path
+                                      d="M12 3v3m0 12v3"></path></svg>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="font-weight-medium">
+                                {{t_trans}} Transaction
+                            </div>
+                            <div class="text-muted">
+                                {{total_send_amount}} sent
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <span class="bg-green text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/shopping-cart -->
+                              <svg class="icon" fill="none" height="24" stroke="currentColor"
+                                   stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                   width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"
+                                                                                       stroke="none"></path><path
+                                      d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path
+                                      d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path
+                                      d="M17 17h-11v-14h-2"></path><path d="M6 5l14 1l-1 7h-13"></path></svg>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="font-weight-medium">
+                                {{t_requests}} Transaction Requests
+                            </div>
+                            <div class="text-muted">
+                                {{total_send_amount}} received
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <span class="bg-wallet text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-twitter -->
+                                <img src="{% static 'crypto.png' %}">
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="font-weight-medium">
+                                Currency
+                            </div>
+                            <div class="text-muted">
+                                {{ request.user.currency_type }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <span class=" text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-facebook -->
+                              <img src="{% static 'money.png' %}">
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="font-weight-medium">
+                                Amount
+                            </div>
+                            <div class="text-muted">
+                                {{ request.user.total_amount }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-body border-bottom">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title mb-3">Statistics</h4>
+                            <div id="chart_year_months">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12">
     <div class="card">
         <div class="card-body border-bottom">
             <div class="row">
@@ -82,198 +209,341 @@
             </div>
         </div>
         {% if recent_transactions %}
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table class="table align-middle table-nowrap table-check">
-                        <thead class="table-light">
-                        <tr>
-                            <th class="align-middle">ID</th>
-                            <th class="align-middle">Sender</th>
-                            <th class="align-middle">Receiver</th>
-                            <th class="align-middle">Amount</th>
-                            <th class="align-middle">Type</th>
-                            <th class="align-middle">Status</th>
-                            <th class="align-middle">Created</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for objects in recent_transactions %}
-                            <tr>
-                                <td>
-                                    <b># {{ objects.id }}</b>
-                                </td>
-                                <td>
-                                    {% if objects.sender == request.user %}
-                                        <b>You</b>
-                                    {% else %}
-                                        {{ objects.sender.get_name_info }}
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    {% if objects.receiver == request.user %}
-                                        <b>You</b>
-                                    {% else %}
-                                        {{ objects.receiver.get_name_info }}
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <b>{{ objects.amount }} {{ request.user.currency_type }}</b>
-                                </td>
-                                <td>
-                                    <b>
-                                        {% if objects.sender == request.user %}
-                                            <i class="fa fa-arrow-up text-primary"></i> Send
-                                        {% else %}
-                                            <i class="fa fa-arrow-down text-primary"></i> Received
-                                        {% endif %}
-                                    </b>
-                                </td>
-                                <td>
-                                    <b>
-                                        {% if objects.is_completed %}
-                                            <span class="badge bg-success me-1"></span> completed
-                                        {% else %}
-                                            <span class="badge b-danger me-1"></span> cancelled
-                                        {% endif %}
-                                    </b>
-                                </td>
-                                <td>
-                                    <i class="fab me-1"></i> {{ objects.created_on }}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        {% else %}
-            <div class="card-body">
-                <p class="mb-0 text-danger">
-                    <b>No transactions available</b>
-                </p>
-            </div>
-        {% endif %}
-    </div>
-
-    <div class="card">
-        <div class="card-body border-bottom">
-            <div class="row">
-                <div class="col-6">
-                    <p class="mb-0 h4">
-                        <i class="bx bx-transfer"></i> Recent Requests
-                    </p>
-                </div>
-
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table align-middle table-nowrap table-check">
+                    <thead class="table-light">
+                    <tr>
+                        <th class="align-middle">ID</th>
+                        <th class="align-middle">Sender</th>
+                        <th class="align-middle">Receiver</th>
+                        <th class="align-middle">Amount</th>
+                        <th class="align-middle">Type</th>
+                        <th class="align-middle">Status</th>
+                        <th class="align-middle">Created</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for objects in recent_transactions %}
+                    <tr>
+                        <td>
+                            <b># {{ objects.id }}</b>
+                        </td>
+                        <td>
+                            {% if objects.sender == request.user %}
+                            <b>You</b>
+                            {% else %}
+                            {{ objects.sender.get_name_info }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if objects.receiver == request.user %}
+                            <b>You</b>
+                            {% else %}
+                            {{ objects.receiver.get_name_info }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            <b>{{ objects.amount }} {{ request.user.currency_type }}</b>
+                        </td>
+                        <td>
+                            <b>
+                                {% if objects.sender == request.user %}
+                                <i class="fa fa-arrow-up text-primary"></i> Send
+                                {% else %}
+                                <i class="fa fa-arrow-down text-primary"></i> Received
+                                {% endif %}
+                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                {% if objects.is_completed %}
+                                <span class="badge bg-success me-1"></span> completed
+                                {% else %}
+                                <span class="badge b-danger me-1"></span> cancelled
+                                {% endif %}
+                            </b>
+                        </td>
+                        <td>
+                            <i class="fab me-1"></i> {{ objects.created_on }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
-        {% if recent_requests %}
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table class="table align-middle table-nowrap table-check">
-                        <thead class="table-light">
-                        <tr>
-                            <th class="align-middle">ID</th>
-                            <th class="align-middle">Sender</th>
-                            <th class="align-middle">Receiver</th>
-                            <th class="align-middle">Amount</th>
-                            <th class="align-middle">Type</th>
-                            <th class="align-middle">Status</th>
-                            <th class="align-middle">Created</th>
-                            <th class="align-middle">Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for objects in recent_requests %}
-                            <tr>
-                                <td>
-                                    <b># {{ objects.id }}</b>
-                                </td>
-                                <td>
-                                    {% if objects.sender == request.user %}
-                                        <b>You</b>
-                                    {% else %}
-                                        {{ objects.sender.get_name_info }}
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    {% if objects.receiver == request.user %}
-                                        <b>You</b>
-                                    {% else %}
-                                        {{ objects.receiver.get_name_info }}
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <b>{{ objects.amount }} {{ request.user.currency_type }}</b>
-                                </td>
-                                <td>
-                                    <b>
-                                        {% if objects.sender == request.user %}
-                                            <i class="fa fa-arrow-up text-primary"></i> Send
-                                        {% else %}
-                                            <i class="fa fa-arrow-down text-primary"></i> Received
-                                        {% endif %}
-                                    </b>
-                                </td>
-                                <td>
-                                    <b>
-                                        {% if objects.status == 'pending' %}
-                                            <span class="badge bg-warning me-1"></span> {{ objects.get_status_display }}
-                                        {% elif objects.status == 'accepted' %}
-                                            <span class="badge bg-success me-1"></span>
-                                            {{ objects.get_status_display }}
-                                        {% else %}
-                                            <span class="badge bg-danger me-1"></span>
-                                            {{ objects.get_status_display }}
-                                        {% endif %}
-                                    </b>
-                                </td>
-                                <td>
-                                    <i class="fab me-1"></i> {{ objects.created_on }}
-                                </td>
-                                <td>
-                                    {% if objects.receiver == request.user %}
-                                        {% if objects.status == "pending" %}
-                                            <a href="{% url 'payapp:request-update' objects.id %}?status=approved"><span
-                                                    class=" btn btn-sm btn-outline-success font-size-12">Accept</span></a>
-                                            <a href="{% url 'payapp:request-update' objects.id %}?status=cancel"><span
-                                                    class="btn btn-sm btn-outline-danger font-size-12">Cancel</span></a>
-                                        {% elif objects.status == "approved" %}
-                                            <a href="#"><span
-                                                    class="bg-success font-size-12">{{ objects.status }}</span></a>
-                                        {% else %}
-                                            <a href="#"><span
-                                                    class="badge badge-pill badge-soft-secondary font-size-12">{{ objects.status }}</span></a>
-                                        {% endif %}
-                                    {% elif objects.sender == request.user %}
-                                        {% if objects.status == "pending" %}
-                                            <span
-                                                    class="badge badge-pill badge-soft-primary font-size-12">{{ objects.status }}</span>
-                                        {% elif objects.status == "approved" %}
-                                            <span
-                                                    class="badge badge-pill badge-soft-success font-size-12">{{ objects.status }}</span>
-                                        {% else %}
-                                            <span
-                                                    class="badge badge-pill badge-soft-secondary font-size-12">{{ objects.status }}</span>
-                                        {% endif %}
-                                    {% endif %}
-
-                                </td>
-
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         {% else %}
-            <div class="card-body">
-                <p class="mb-0 text-danger">
-                    <b>No requests available</b>
+        <div class="card-body">
+            <p class="mb-0 text-danger">
+                <b>No transactions available</b>
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="col-12">
+    <div class="card">
+        <div class="card-body border-bottom">
+            <div class="col-6">
+                <p class="mb-0 h4">
+                    <i class="bx bx-transfer"></i> Recent Requests
                 </p>
             </div>
+
+        </div>
+        {% if recent_requests %}
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table align-middle table-nowrap table-check">
+                    <thead class="table-light">
+                    <tr>
+                        <th class="align-middle">ID</th>
+                        <th class="align-middle">Sender</th>
+                        <th class="align-middle">Receiver</th>
+                        <th class="align-middle">Amount</th>
+                        <th class="align-middle">Type</th>
+                        <th class="align-middle">Status</th>
+                        <th class="align-middle">Created</th>
+                        <th class="align-middle">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for objects in recent_requests %}
+                    <tr>
+                        <td>
+                            <b># {{ objects.id }}</b>
+                        </td>
+                        <td>
+                            {% if objects.sender == request.user %}
+                            <b>You</b>
+                            {% else %}
+                            {{ objects.sender.get_name_info }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if objects.receiver == request.user %}
+                            <b>You</b>
+                            {% else %}
+                            {{ objects.receiver.get_name_info }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            <b>{{ objects.amount }} {{ request.user.currency_type }}</b>
+                        </td>
+                        <td>
+                            <b>
+                                {% if objects.sender == request.user %}
+                                <i class="fa fa-arrow-up text-primary"></i> Send
+                                {% else %}
+                                <i class="fa fa-arrow-down text-primary"></i> Received
+                                {% endif %}
+                            </b>
+                        </td>
+                        <td>
+                            <b>
+                                {% if objects.status == 'pending' %}
+                                <span class="badge bg-warning me-1"></span> {{ objects.get_status_display }}
+                                {% elif objects.status == 'accepted' %}
+                                <span class="badge bg-success me-1"></span>
+                                {{ objects.get_status_display }}
+                                {% else %}
+                                <span class="badge bg-danger me-1"></span>
+                                {{ objects.get_status_display }}
+                                {% endif %}
+                            </b>
+                        </td>
+                        <td>
+                            <i class="fab me-1"></i> {{ objects.created_on }}
+                        </td>
+                        <td>
+                            {% if objects.receiver == request.user %}
+                            {% if objects.status == "pending" %}
+                            <a href="{% url 'payapp:request-update' objects.id %}?status=approved"><span
+                                    class=" btn btn-sm btn-outline-success font-size-12">Accept</span></a>
+                            <a href="{% url 'payapp:request-update' objects.id %}?status=cancel"><span
+                                    class="btn btn-sm btn-outline-danger font-size-12">Cancel</span></a>
+                            {% elif objects.status == "approved" %}
+                            <a href="#"><span
+                                    class="bg-success font-size-12">{{ objects.status }}</span></a>
+                            {% else %}
+                            <a href="#"><span
+                                    class="badge badge-pill badge-soft-secondary font-size-12">{{ objects.status }}</span></a>
+                            {% endif %}
+                            {% elif objects.sender == request.user %}
+                            {% if objects.status == "pending" %}
+                            <span
+                                    class="badge badge-pill badge-soft-primary font-size-12">{{ objects.status }}</span>
+                            {% elif objects.status == "approved" %}
+                            <span
+                                    class="badge badge-pill badge-soft-success font-size-12">{{ objects.status }}</span>
+                            {% else %}
+                            <span
+                                    class="badge badge-pill badge-soft-secondary font-size-12">{{ objects.status }}</span>
+                            {% endif %}
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% else %}
+        <div class="card-body">
+            <p class="mb-0 text-danger">
+                <b>No requests available</b>
+            </p>
+        </div>
         {% endif %}
     </div>
 
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+        var options_year_months = {
+            series: [{
+                name: 'Bitcoin',
+                data: [31, 40, 28, 51, 42, 109, 100, 51, 42, 109, 100, 101]
+            }, {
+                name: 'Ethereum',
+                data: [11, 32, 45, 32, 34, 52, 32, 45, 32, 34, 52, 41]
+            }, {
+                name: 'Dodge',
+                data: [12, 40, 100, 62, 74, 82, 91, 100, 40, 55, 62, 74]
+            },{
+                name: 'Sheba',
+                data: [12, 67, 23, 62, 74, 65, 91, 56, 23, 7, 62, 74]
+            }],
+            chart: {
+                height: 225,
+                type: 'area'
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'number',
+                categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+            }
+        };
+        var options_month_dates = {
+            series: [{
+                name: 'A',
+                data: [31, 40, 28, 51, 42, 109, 100, 51, 42, 109, 31, 40, 28, 51, 42, 109, 100, 51, 42, 109, 31, 40, 28, 51, 42, 109, 100, 51]
+            }, {
+                name: 'B',
+                data: [11, 32, 45, 32, 34, 52, 32, 45, 32, 34, 11, 32, 45, 32, 34, 52, 32, 45, 32, 34, 11, 32, 45, 32, 34, 52, 32, 45]
+            }, {
+                name: 'C',
+                data: [12, 40, 100, 62, 74, 82, 91, 100, 40, 55, 62, 74, 12, 40, 100, 62, 74, 82, 91, 100, 40, 55, 62, 74, 12, 40, 100, 62]
+            }],
+            chart: {
+                height: 225,
+                type: 'area'
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'number',
+                categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+            }
+        };
+
+        var options_year_months_registrations = {
+            series: [{
+                name: 'A',
+                data: [100, 40, 28, 51, 42, 109, 100, 40, 28, 42, 109, 100]
+            }],
+            chart: {
+                type: 'area',
+                stacked: false,
+                height: 200,
+                zoom: {
+                    type: 'x',
+                    enabled: true,
+                    autoScaleYaxis: true
+                },
+                toolbar: {
+                    autoSelected: 'zoom'
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    inverseColors: false,
+                    opacityFrom: 0.5,
+                    opacityTo: 0,
+                    stops: [0, 90, 100]
+                },
+            },
+            xaxis: {
+                type: 'number',
+                categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+            }
+        };
+        var options_month_days_registrations = {
+            series: [{
+                name: 'B',
+                data: [1, 22, 23, 24, 25, 36, 17, 23, 29, 31, 11, 33, 13, 24, 25, 36, 34, 18, 19, 18, 9, 22, 21, 42, 2, 3, 10, 2]
+            }],
+            chart: {
+                type: 'area',
+                stacked: false,
+                height: 200,
+                zoom: {
+                    type: 'x',
+                    enabled: true,
+                    autoScaleYaxis: true
+                },
+                toolbar: {
+                    autoSelected: 'zoom'
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    inverseColors: false,
+                    opacityFrom: 0.5,
+                    opacityTo: 0,
+                    stops: [0, 90, 100]
+                },
+            },
+            xaxis: {
+                type: 'number',
+                categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+            }
+        };
+
+        var chart_year_months = new ApexCharts(document.querySelector("#chart_year_months"), options_year_months);
+        var chart_month_dates = new ApexCharts(document.querySelector("#chart_month_dates"), options_month_dates);
+        var chart_year_months_registrations = new ApexCharts(document.querySelector("#chart_year_months_registrations"), options_year_months_registrations);
+        var chart_month_days_registrations = new ApexCharts(document.querySelector("#chart_month_days_registrations"), options_month_days_registrations);
+
+        chart_year_months.render();
+        chart_month_dates.render();
+        chart_year_months_registrations.render();
+        chart_month_days_registrations.render();
 
 
-{% endblock content %}
+
+</script>
+{% endblock %}
