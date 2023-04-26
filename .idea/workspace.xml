@@ -2,34 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51c82763-d407-41ea-b4b7-66e22996d6d9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.webapps" beforeDir="false" afterPath="$PROJECT_DIR$/db.webapps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.webapps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payapp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payapp/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/register/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/include/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/migrations/0002_alter_user_currency_type_alter_user_total_amount.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/migrations/0003_user_is_connected.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/payapp/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/payapp/money.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/money.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/payapp/request_transaction_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/request_transaction_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/payapp/transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payapp/transactions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps2023/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps2023/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps2023/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps2023/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/website/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/website/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/website/include/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/website/include/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/website/privacy-policy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/website/terms.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/views.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,14 +57,14 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/media/saqib/Local Disk2/GIT/Cryptp-payment-system/templates/payapp",
+    "last_opened_file_path": "/media/saqib/Local Disk/GIT/Cryptp-payment-system/static",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/payapp" />
       <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/templates/payapp" />
       <recent name="E:\GIT\LEARN\Online-Payment-Servive-Thailand\static" />
       <recent name="E:\GIT\LEARN\Online-Payment-Servive-Thailand" />
     </key>
@@ -89,7 +72,69 @@
       <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.python global">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Online-Payment-Servive-Thailand" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.10" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="python global" type="PythonConfigurationType" factoryName="Python">
+      <module name="Online-Payment-Servive-Thailand" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.10" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Online-Payment-Servive-Thailand" type="Python.DjangoServer" factoryName="Django server">
       <module name="Online-Payment-Servive-Thailand" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,6 +158,9 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.python global" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -146,7 +194,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/payapp/utils.py</url>
-          <line>14</line>
+          <line>15</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -6,11 +6,11 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.decorators import method_decorator
 from django.views import View
 from rest_framework.response import Response
-from .bll import total_request_amount,total_send_amount
+from .bll import total_request_amount, total_send_amount
 from django.views.generic import ListView, DetailView, TemplateView
 
 from payapp.models import Transaction, TransactionRequest
-from payapp.utils import  convert_crypto, convert_to_float
+from payapp.utils import convert_crypto, convert_to_float
 from register.models import User
 from rest_framework.views import APIView
 from rest_framework.status import (
@@ -56,6 +56,15 @@ class TransactionListView(ListView):
         return Transaction.objects.filter(
             Q(sender=self.request.user) | Q(receiver=self.request.user)
         )
+
+    def get_context_data(self, **kwargs):
+        context = super(TransactionListView, self).get_context_data(**kwargs)
+        context['bitcoin'] = self.request.user.total_amount
+        context['DOGE'] = convert_crypto(self.request.user.currency_type, 'DOGE', self.request.user.total_amount)
+        context['ETHEREUM'] = convert_crypto(self.request.user.currency_type, 'ETHEREUM',
+                                             self.request.user.total_amount)
+        context['SHEBA'] = convert_crypto(self.request.user.currency_type, 'SHEBA', self.request.user.total_amount)
+        return context
 
 
 @method_decorator(login_required, name='dispatch')
@@ -272,7 +281,7 @@ class CurrencyConversionAPI(APIView):
             )
 
         # SUCCESS: everything is fine here
-        converted_amount =  convert_crypto(currency1, currency2, float_amount)
+        converted_amount = convert_crypto(currency1, currency2, float_amount)
         return Response(
             status=HTTP_200_OK, data={
                 'amount': converted_amount
@@ -283,8 +292,8 @@ class CurrencyConversionAPI(APIView):
 @method_decorator(login_required, name='dispatch')
 class DepositView(View):
 
-    def get(self, request, amount,*args):
-        user =User.objects.get(id=request.user.id)
+    def get(self, request, amount, *args):
+        user = User.objects.get(id=request.user.id)
         print(user.total_amount)
         user.total_amount += 10
         user.save()
@@ -298,9 +307,9 @@ class EducationView(TemplateView):
 
 
 class ConnectwithWallet(View):
-    def get(self,*args,**kwargs):
+    def get(self, *args, **kwargs):
         user = self.request.user
         user.is_connected = True
         user.save()
-        messages.success(self.request,"Successfully connected with wallet")
+        messages.success(self.request, "Successfully connected with wallet")
         return redirect('payapp:dashboard')

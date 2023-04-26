@@ -2,9 +2,10 @@
 def convert_crypto(crypto1, crypto2, amount):
     # Define conversion rates
     conversion_rates = {
-        'BTC': {'DOGE': 119246.85, 'ETHEREUM': 27.37},
-        'DODGE': {'BTC': 0.00000839, 'ETHEREUM': 0.000229},
-        'ETHEREUM': {'BTC': 0.036, 'DOGE': 4374.06}
+        'BTC': {'DOGE': 119246.85, 'ETHEREUM': 27.37, 'SHEBA': 0.000014},
+        'DOGE': {'BTC': 0.00000839, 'ETHEREUM': 0.000229, 'SHEBA': 0.00062},
+        'ETHEREUM': {'BTC': 0.036, 'DOGE': 4374.06, 'SHEBA': 0.00043},
+        'SHEBA': {'BTC': 71563.48, 'DOGE': 1613.65, 'ETHEREUM': 2317.39}
     }
     print(crypto1)
     print(crypto2)

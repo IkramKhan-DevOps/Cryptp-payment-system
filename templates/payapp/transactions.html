@@ -1,36 +1,134 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <div class="page-header d-print-none">
-          <div class="container-xl">
-            <div class="row g-2 align-items-center">
-              <div class="col">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
                 <!-- Page pre-title -->
                 <div class="page-pretitle">
-                  Overview
+                    Overview
                 </div>
                 <h2 class="page-title">
-                  Wallet
+                    Wallet
                 </h2>
-              </div>
-              <!-- Page title actions -->
-              <div class="col-auto ms-auto d-print-none">
+            </div>
+            <!-- Page title actions -->
+            <div class="col-auto ms-auto d-print-none">
                 <div class="btn-list">
                   <span class="d-none d-sm-inline">
-                    <a href="{% url 'payapp:transaction-create' %}" class="btn">
+                    <a class="btn" href="{% url 'payapp:transaction-create' %}">
                       Send
                     </a>
                   </span>
-                  <a href="{% url 'payapp:request-create' %}" class="btn btn-primary d-none d-sm-inline-block">
-                    Buy
-                  </a>
-                  <a href="{% url 'payapp:request-create' %}" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 5l0 14"></path><path d="M5 12l14 0"></path></svg>
-                  </a>
+                    <a class="btn btn-primary d-none d-sm-inline-block" href="{% url 'payapp:request-create' %}">
+                        Buy
+                    </a>
+                    <a aria-label="Create new report" class="btn btn-primary d-sm-none btn-icon"
+                       data-bs-target="#modal-report" data-bs-toggle="modal" href="{% url 'payapp:request-create' %}">
+                        <svg class="icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                    </a>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
+    </div>
+        <div class="row mt-3 row-cards">
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                <div class="col-auto">
+                            <span class="bg-wallet text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-twitter -->
+                                <img src="{% static 'bitcoin.png' %}">
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="font-weight-medium">
+                                 Bitcoin
+                            </div>
+                            <div class="text-muted">
+                                 {{bitcoin}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                  <div class="col-auto">
+                            <span class="bg-wallet text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-twitter -->
+                                <img src="{% static 'eth.png' %}">
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="font-weight-medium">
+                               Ethereum
+                            </div>
+                            <div class="text-muted">
+                                 {{ETHEREUM}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <span class="bg-wallet text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-twitter -->
+                                <img src="{% static 'doge.png' %}">
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="font-weight-medium">
+                                Doge
+                            </div>
+                            <div class="text-muted">
+                                 {{DOGE}}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card card-sm">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <span class=" text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-facebook -->
+                              <img src="{% static 'shiba.png' %}">
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="font-weight-medium">
+                                Sheba
+                            </div>
+                            <div class="text-muted">
+                                 {{SHEBA}}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <div class="col-12">
     <div class="card">
         <div class="card-body border-bottom">
